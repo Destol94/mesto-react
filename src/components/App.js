@@ -32,8 +32,8 @@ function App() {
         <Header />
         <Main onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick} onEditAvatar={handleEditAvatarClick} onCardClick={handleCardClick} />
         <Footer />
-        <PopupWithForm onClose={()=> {closeAllPopups(setIsEditProfilePopupOpen)}} name="profile" title="Редактировать профиль" isOpen = {isEditProfilePopupOpen} buttonText="Сохранить" children = {
-            <>
+        <PopupWithForm onClose={() => { closeAllPopups(setIsEditProfilePopupOpen) }} name="profile" title="Редактировать профиль" isOpen={isEditProfilePopupOpen} buttonText="Сохранить">
+          <>
             <div className="popup__field">
               <input type="text" className="popup__name popup__input" defaultValue="" name="inputName" id="inputName" placeholder="Имя" required minLength="2" maxLength="40" />
               <span className="popup__span-error inputName-error"></span>
@@ -42,31 +42,28 @@ function App() {
               <input type="text" className="popup__occupation popup__input" defaultValue="" name="inpitOccupation" placeholder="О себе" id="inpitOccupation" required minLength="2" maxLength="200" />
               <span className="popup__span-error inpitOccupation-error"></span>
             </div>
-            </>
-          } 
-        />
-        <PopupWithForm onClose={()=> {closeAllPopups(setIsAddPlacePopupOpen)}} name="card" title="Новое место" isOpen={isAddPlacePopupOpen} buttonText="Создать" children={
+          </>
+        </PopupWithForm>
+        <PopupWithForm onClose={() => { closeAllPopups(setIsAddPlacePopupOpen) }} name="card" title="Новое место" isOpen={isAddPlacePopupOpen} buttonText="Создать" >
           <>
-          <div className="popup__field">
+            <div className="popup__field">
               <input type="text" className="popup__name popup__input" defaultValue="" name="name" id="inputTitle" placeholder="Название" required minLength="2" maxLength="30" />
               <span className="popup__span-error inputTitle-error"></span>
             </div>
             <div className="popup__field">
-              <input className="popup__occupation popup__input" defaultValue="" type="url" name="link" id="inpitLink" placeholder="Ссылка на картинку"  required />
+              <input className="popup__occupation popup__input" defaultValue="" type="url" name="link" id="inpitLink" placeholder="Ссылка на картинку" required />
               <span className="popup__span-error inpitLink-error"></span>
-            </div></>
-        } />
-        <PopupWithForm onClose={()=> {closeAllPopups()}} name="confirm" title="Вы уверены?" buttonText="Да" />
-        <PopupWithForm onClose={()=> {closeAllPopups(setIsEditAvatarPopupOpen)}} name="avatar" buttonText="Сохранить" title="Обновить аватар" isOpen={isEditAvatarPopupOpen}  children={
-          <>
-          <div className="popup__field">
-              <input className="popup__occupation popup__input" defaultValue="" type="url" name="link" id="inpitLinkAvatar" placeholder="Ссылка на картинку"  required />
-              <span className="popup__span-error inpitLinkAvatar-error"></span>
             </div>
           </>
-          } 
-        />
-        <ImagePopup card={selectedCard} onClose={()=> {closeAllPopups(handleCardClick)}} />
+        </PopupWithForm>
+        <PopupWithForm onClose={() => { closeAllPopups() }} name="confirm" title="Вы уверены?" buttonText="Да" />
+        <PopupWithForm onClose={() => { closeAllPopups(setIsEditAvatarPopupOpen) }} name="avatar" buttonText="Сохранить" title="Обновить аватар" isOpen={isEditAvatarPopupOpen} >
+          <div className="popup__field">
+            <input className="popup__occupation popup__input" defaultValue="" type="url" name="link" id="inpitLinkAvatar" placeholder="Ссылка на картинку" required />
+            <span className="popup__span-error inpitLinkAvatar-error"></span>
+          </div>
+        </PopupWithForm>
+        <ImagePopup card={selectedCard} onClose={() => { closeAllPopups(handleCardClick) }} />
       </div>
     </div>
   );
