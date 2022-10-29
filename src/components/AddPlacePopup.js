@@ -3,9 +3,9 @@ import PopupWithForm from "./PopupWithForm";
 
 function AddPlacePopup(props) {
 
-  const [name, setname] = useState('');
+  const [name, setName] = useState('');
   function handleChangeName(e) {
-    setname(e.target.value);
+    setName(e.target.value);
   }
   const newCardUrlRef = useRef();
   function handleSubmit(e) {
@@ -14,7 +14,7 @@ function AddPlacePopup(props) {
       name,
       url: newCardUrlRef.current.value
     })
-    setname('');
+    setName('');
     newCardUrlRef.current.value = '';
   }
   return (
