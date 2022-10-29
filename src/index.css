@@ -29,6 +29,8 @@
 @import url(./blocks/element/__btn-heart/element__btn-heart.css);
 @import url(./blocks/element/__btn-heart/element__btn-heart_activ.css);
 @import url(./blocks/element/__trashcan/element__trashcan.css);
+@import url(./blocks/element/__trashcan/_visible/element__trashcan_visible.css);
+@import url(./blocks/element/__trashcan/_hidden/element__trashcan_hidden.css);
 @import url(./blocks/footer/footer.css);
 @import url(./blocks/footer/__copyright/footer__copyright.css);
 @import url(./blocks/popup/popup.css);

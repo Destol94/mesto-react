@@ -52,6 +52,13 @@ class Api {
     })
       .then(res => { return this._getResponseDate(res) })
   }
+  changeLikeCardStatus(id, isLiked) {
+    return fetch(`${this._address}/cards/${id}/likes`, {
+      method: isLiked ? "PUT" : "DELETE",
+      headers: this._headers
+    })
+      .then(res => { return this._getResponseDate(res) })
+  }
   addLike(id) {
     return fetch(`${this._address}/cards/${id}/likes`, {
       method: "PUT",
