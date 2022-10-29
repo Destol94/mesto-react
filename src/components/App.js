@@ -25,7 +25,8 @@ function App() {
     api.changeLikeCardStatus(card._id, !isLiked)
       .then((newCard) => {
         setCards((state) => state.map((c) => c._id === card._id ? newCard : c));
-      });
+      })
+      .catch(error => console.log(error));
   }
   function handleCardDelete(card) {
     api.deleteCard(card._id)
@@ -84,11 +85,12 @@ function App() {
       .catch((error) => { console.log(error) })
   }
 
-  function handleAddPlaceSubmit({ name, url }) {
+  function handleAddPlaceSubmit({ name, url, cleanForm }) {
     api.patchCard(name, url)
       .then((newCard) => {
         setCards([newCard, ...cards]);
         closeAllPopups(setIsAddPlacePopupOpen);
+        cleanForm();
       })
       .catch((error) => { console.log(error) })
   }
